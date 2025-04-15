@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edebiyat Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+</head> 
+<body class="blur">
+
+  <div id="result" class="result-container disable">
+    <div class="stats-window">
+      <div class="stats-title">Sonuçlar</div>
+      <div class="stat"><span>Doğru:</span> <span id="stat-correct"></span></div>
+      <div class="stat"><span>Yanlış:</span> <span id="stat-incorrect"></span></div>
+      <div class="stat"><span>Pas:</span> <span id="stat-pass"></span></div>
+      <div class="stat"><span>Geçen süre:</span> <span id="stat-time"></span></div>
+      <div class="stat"><span>Tamamlama Tarihi:</span> <span id="stat-date"></span></div>
+
+      <div class="buttons">
+        <button class="button" onclick="location.reload()">Tekrar Dene</button>
+        <button class="button" onclick="location.replace('main.html')">Ana Menü</button>
+      </div>
+    </div>
+
+    <div class="scoreboard">
+      <div class="scoreboard-title">En iyi skorlar</div>
+      <div id="score-list" class="score-list">
+        <!-- Add more entries here -->
+      </div>
+      
+      
+      
+      
+    </div>
+  </div>
+    
+  <div id="quiz" class="quiz-window">
+    <div class="header">
+      <div class="status-box">
+        <div  id="qcount" class="counter">10/10</div>
+        <div class="timer"> <span id="timer"> 00:00.00 </span> 
+        </div>
+        <button id="option_pass" class="pass-btn"  onclick="QuestionManager.pass()">Pas</button>
+      </div>
+    </div>
+
+    <div id="question" class="question inherit-blur">
+      What is the capital of France?
+    </div>
+
+    <div class="options">
+      <button id="option_0" onclick="QuestionManager.answer(0)" class="option-btn inherit-blur">Paris</button>
+      <button id="option_1" onclick="QuestionManager.answer(1)" class="option-btn inherit-blur">Rome</button>
+      <button id="option_2" onclick="QuestionManager.answer(2)" class="option-btn inherit-blur">Berlin</button>
+      <button id="option_3" onclick="QuestionManager.answer(3)" class="option-btn inherit-blur">Madrid</button>
+    </div>
+  </div>
+  <script src="./script.js" defer></script>
+</body>
+<!-- Countdown Component Start -->
+<div id="countdown-wrapper">
+  <div id="countdown-overlay">
+    <div id="countdown-number">3</div>
+    <div id="countdown-tip">atlamak için 'space' tuşana basınız...</div>
+  </div>
+</div>
+
+<!-- Countdown Component End -->
+
+</html>
