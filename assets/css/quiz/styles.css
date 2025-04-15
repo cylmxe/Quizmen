@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("image.png");
+    background: url("../../img/background.png");
     background-size: cover;
     background-position: center;
     background-color: #1c0b3b69;
