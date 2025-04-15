@@ -415,6 +415,7 @@ document.onreadystatechange = ()=>{
         wrapper.remove();
         document.body.classList.remove("blur")
         QuestionManager.start(10)
+        document.removeEventListener("keypress", count_down_callback)
         return;
     }
     el.textContent = count.toString();

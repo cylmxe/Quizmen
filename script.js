@@ -354,10 +354,10 @@ function add_to_scoreboard_node(stats, highlight = false) {
     elapsed_time = "Şimdiki"
   }
   var options = { time: "long", year: "numeric", month: "long", day: "numeric" }
-  el.innerHTML = `<div class="entry-date">(${stats.date.toLocaleString(
+  el.innerHTML = `<div class="entry-elapsed">${elapsed_time} </div>
+                    <div class="entry-date">(${stats.date.toLocaleString(
                       "tr-TR"
-                    )})</div><div class="entry-elapsed">${elapsed_time} </div>
-                    
+                    )})</div>
                     <div class="entry-details">Doğru: ${
                       stats.correct
                     } | Yanlış: ${stats.incorrect} | Pas: ${stats.pass}</div>
@@ -400,6 +400,7 @@ document.onreadystatechange = () => {
       wrapper.remove()
       document.body.classList.remove("blur")
       QuestionManager.start(10)
+      document.removeEventListener("keypress", count_down_callback)
       return
     }
     el.textContent = count.toString()
